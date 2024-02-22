@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navbar';
+import NewsBoard from './Components/NewsBoard';
+import NewsItem from './Components/NewsItem';
+import { useState } from 'react';
 
 function App() {
+
+  const[category,setcategory] = useState("general")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <Navbar setcategory={setcategory}/>
+   <NewsBoard category={category}/>
+   <NewsItem/>
+   </>
   );
 }
 
